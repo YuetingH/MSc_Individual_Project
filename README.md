@@ -5,13 +5,13 @@ A network represents entities in a complex system as nodes, and their pairwise r
 
 In this dissertation, we investigate a network structure known as ‘bow-tie structure’ in online social networks that represent interactive web pages on Facebook. Our analysis and preliminary prediction model show that this structure can shed light on the structural differences of information diffusion in different vaccine groups, and their evolution over time.
 
-**This github page documents the dataset and programming resources in my dissertation. Relevant data analysis is also available in this repository. Notice that we use Python as our programming language here.**
+**This github page documents the dataset and programming resources in my dissertation. Notice that we use Python as our programming language here.**
 
 <br/>
 
 ## Dataset
 
->The dataset was obtained from [Johnson et al.](https://www.nature.com/articles/s41586-020-2281-1) in PDF format (328 pages), open access but requiring intensive preprocessing. To make it easier for other researchers to use this dataset, we reorganized the dataset in gpickle files (easy to be read through [NetworkX](https://networkx.org/)) and have made it open available here.
+>The dataset was obtained from [Johnson et al.](https://www.nature.com/articles/s41586-020-2281-1) in PDF format (328 pages), open access but requiring intensive preprocessing. To make it easier for other researchers to use this dataset, we reorganized the dataset in gpickle files (easy to be imported through [NetworkX](https://networkx.org/)) and have made them open available here.
 
 
 ### A. Description
@@ -60,5 +60,23 @@ See my [homepage](https://github.com/YuetingH) for details.
 <br/>
 
 ## Repository Structure
-
+```bash
+Essay
+¦   README.md   
+¦
++---Dataset   
+¦   ¦   Preprocessing.ipynb        # Data preprocessing from the original dataset
+¦   ¦   Usage.ipynb                # Usage of reorganized dataset
+¦   ¦
+¦   +---Original_Dataset           
+¦   ¦   ¦   Vaccination_data.pdf   # PDF version
+¦   ¦   ¦   Vaccination_data.xlsx  # EXCEL version (converted from pdf)
+¦   ¦
+¦   +---Reorganized_Dataset
+¦   ¦   G1.gpickle                 # February network
+¦   ¦   G2.gpickle                 # October network
+¦
++---Figures                       
+    ¦   data.png                 
+```
 
