@@ -5,12 +5,16 @@ A network represents entities in a complex system as nodes, and their pairwise r
 
 In this dissertation, we investigate a network structure known as ‘bow-tie structure’ in online social networks that represent interactive web pages on Facebook. Our analysis and preliminary prediction model show that this structure can shed light on the structural differences of information diffusion in different vaccine groups, and their evolution over time.
 
+**This github page documents the dataset and programming resources in my dissertation. Relevant data analysis is also available in this repository. Notice that we use Python as our programming language here.**
+
 <br/>
 
 ## Dataset
 
->The dataset was obtained from [Johnson et al.](https://www.nature.com/articles/s41586-020-2281-1) in PDF format (328 pages), open access but requiring intensive preprocessing. To make it easier for other researchers to use this dataset, we reorganized the dataset in a CSV file and have made it open available here.
+>The dataset was obtained from [Johnson et al.](https://www.nature.com/articles/s41586-020-2281-1) in PDF format (328 pages), open access but requiring intensive preprocessing. To make it easier for other researchers to use this dataset, we reorganized the dataset in gpickle files (easy to be read through [NetworkX](https://networkx.org/)) and have made it open available here.
 
+
+### A. Description
 It describes the snapshots of online competition between different vaccination views on February and October 2019 (pre-COVID-19), involving nearly 100 million users in Facebook from across countries, continents and languages. It can be represented by two networks corresponding to February and October. Each network is directed with self-loops but no multi-edges. The number of nodes is the same in February and October, given by 1326 in total. The number of edges in February is 5163 and in October is 7484. Details are explained as follows:
 
 - **Node**: Each node is a public Facebook page that focuses on pro- vs anti- vaccination. It is attributed with *fan size*, that is the number of members who subscribe to the Facebook page, along with the other attribute *polarity* including anti-vaccination, pro-vaccination and neutral. Whereas its polarity remains the same for February and October snapshots, its fan size changes.
@@ -22,6 +26,20 @@ It describes the snapshots of online competition between different vaccination v
   Remarks: Both 'two-way recommendation' and 'self recommendation' are allowed. Two-way recommendation means two pages recommend each other. Self recommendation means a page recommend itself to all of its followers (e.g., to increase engagement).
 
 <img src="Figures/data.png" style="width:700px;"/>
+
+### B. Usage
+Dataset import is required to install python package [NetworkX](https://networkx.org/).
+The instruction for using this dataset is documented in [Dataset/Usage.ipynb](./Dataset/Usage.ipynb). For convenience, we briefly mention it here: 
+```python
+import networkx as nx
+
+G1 = nx.read_gpickle("Reorganized_Dataset/G1.gpickle") # Feb network
+G2 = nx.read_gpickle("Reorganized_Dataset/G2.gpickle") # Oct network
+```
+
+In case you would like to know the preprocessing procedure, we also document it in [Dataset/Preprocessing.ipynb](./Dataset/Preprocessing.ipynb).
+
+
 
 <br/>
 
@@ -41,6 +59,6 @@ See my [homepage](https://github.com/YuetingH) for details.
 
 <br/>
 
-## Folder Structure
+## Repository Structure
 
 
