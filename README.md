@@ -61,7 +61,7 @@ See my [homepage](https://github.com/YuetingH) for details.
 
 ## Repository Structure
 ```bash
-Essay
+MSc_Individual_Project
 ¦   README.md   
 ¦
 +---Dataset   
